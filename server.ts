@@ -1,5 +1,7 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import type { Request, Response } from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { GoogleGenAI, Type } from '@google/genai';
@@ -11,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = 3000;
 
 app.use(express.json({ limit: '25mb' }));
 
@@ -557,10 +559,16 @@ app.get('/api/db/status', (_req: Request, res: Response) => {
 });
 
 // Production static assets or Vite Dev Middleware
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, 'dist')));
-  app.get('*', (_req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+const distPath = path.resolve(__dirname, 'dist');
+const isProd = process.env.NODE_ENV === 'production' || (!process.env.npm_lifecycle_event?.includes('dev') && fs.existsSync(path.join(distPath, 'index.html')));
+
+if (isProd && fs.existsSync(path.join(distPath, 'index.html'))) {
+  app.use(express.static(distPath));
+  app.get('*', (req: Request, res: Response, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(distPath, 'index.html'));
   });
 } else {
   const { createServer: createViteServer } = await import('vite');
