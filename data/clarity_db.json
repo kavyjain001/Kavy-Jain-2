@@ -1,0 +1,108 @@
+{
+  "doubts": [
+    {
+      "id": "doubt_default_zero_division",
+      "doubt": "Why is dividing by zero mathematically undefined or impossible?",
+      "subject": "math",
+      "level": "highschool",
+      "timestamp": 1790838375120,
+      "title": "Why Dividing by Zero Breaks the Rules of Mathematics",
+      "oneSentenceAha": "Division is just asking \"how many times can you subtract this number until you hit zero?\" — and if you subtract zero, you will subtract forever and never finish.",
+      "simpleAnalogy": {
+        "title": "The Cookie Jar with Zero-Ounce Scoops",
+        "story": "Imagine you have a jar with 10 chocolate chip cookies, and you want to share them among friends. If you give 2 cookies to each friend, you can serve 5 friends (10 ÷ 2 = 5). But if you have a magic scoop that dishes out exactly 0 cookies per friend, how many friends can you serve until the jar is empty? You scoop 0 cookies for friend #1, friend #2, friend #1,000,000... the jar STILL has 10 cookies! You can never empty the jar.",
+        "connection": "Because no finite number of zeroes can ever sum up to 10, there is no single answer to 10 ÷ 0. In algebra, division must have exactly one consistent answer, so mathematicians classify it as \"undefined\"."
+      },
+      "coreConcept": {
+        "summary": "In mathematics, division is the inverse operation of multiplication. For a / b = c to be true, it must be true that b * c = a. When b is zero, this equation becomes 0 * c = a. If a is not zero, no number c can ever make 0 * c nonzero.",
+        "keyPoints": [
+          "Multiplication Inverse: If 12 ÷ 3 = 4, then 4 × 3 = 12. If 12 ÷ 0 = c, then c × 0 = 12, which is impossible because anything times zero is zero.",
+          "Limits and Infinity: As you divide by numbers closer to zero, the answer grows toward +∞ from the positive side, but -∞ from the negative side.",
+          "Two Contradicting Directions: Approaching from positive numbers yields +∞, while approaching from negative numbers yields -∞. A limit with two conflicting answers does not exist."
+        ]
+      },
+      "stepByStep": [
+        {
+          "step": 1,
+          "title": "Define division as repeated subtraction",
+          "explanation": "To compute 15 ÷ 5, you count how many times you can subtract 5 until reaching 0: 15 - 5 - 5 - 5 = 0 (3 times).",
+          "whyItMatters": "It shows arithmetic is grounded in counting physical operations."
+        },
+        {
+          "step": 2,
+          "title": "Attempt repeated subtraction with zero",
+          "explanation": "Try computing 10 ÷ 0: 10 - 0 = 10; 10 - 0 = 10... You can repeat this infinite times without ever changing the remaining number.",
+          "whyItMatters": "The counting process never terminates or converges to an end state."
+        },
+        {
+          "step": 3,
+          "title": "Check the multiplication inverse rule",
+          "explanation": "If 10 ÷ 0 = X, then X × 0 must equal 10. But by definition of zero in arithmetic, any number multiplied by zero equals zero.",
+          "whyItMatters": "Allowing division by zero would destroy mathematical consistency and allow proving that 1 = 2."
+        }
+      ],
+      "visualModel": {
+        "type": "flow",
+        "caption": "Why 10 / x diverges as x approaches 0 from both sides",
+        "content": "  x -> 0 (+): 10/0.0001 = 100,000 -> +Infinity\n  x -> 0 (-): 10/(-0.0001) = -100,000 -> -Infinity\n  Conclusion: +Infinity != -Infinity (Undefined)"
+      },
+      "commonTraps": [
+        "Assuming 10 ÷ 0 = 0 (Dividing into zero groups does not leave zero things).",
+        "Assuming 10 ÷ 0 = Infinity (Infinity is not a real number)."
+      ],
+      "realWorldApplication": "CPU processors trigger hardware exceptions to prevent infinite division clock cycles.",
+      "quickQuiz": [
+        {
+          "question": "Why is 10 ÷ 0 not equal to 0?",
+          "options": [
+            "Because if 10 ÷ 0 = 0, then 0 × 0 would have to equal 10, which is false.",
+            "Because 10 is too large to fit into 0.",
+            "Because calculators run out of battery.",
+            "Because zero is an imaginary number."
+          ],
+          "correctIndex": 0,
+          "explanation": "Division must reverse multiplication. 0 * 0 can never equal 10."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "fc_sample_1",
+          "front": "Why is dividing by zero considered \"undefined\"?",
+          "back": "Because division is the inverse of multiplication, and no number multiplied by 0 can ever equal a non-zero number.",
+          "tip": "Remember: a / 0 = c implies 0 * c = a.",
+          "mastered": false
+        }
+      ],
+      "suggestedFollowUps": [
+        "What is 0 divided by 0? Is that also undefined or indeterminate?",
+        "How do calculus limits let us divide by numbers that get infinitely close to zero?"
+      ]
+    }
+  ],
+  "practiceResults": [
+    {
+      "id": "pr_sample_1",
+      "topic": "Newton's Laws of Motion & Friction",
+      "subject": "physics",
+      "difficulty": "intermediate",
+      "scorePct": 80,
+      "correctCount": 4,
+      "totalCount": 5,
+      "timeSpentSeconds": 142,
+      "timestamp": 1790834775121
+    }
+  ],
+  "studySessions": [
+    {
+      "id": "ss_sample_1",
+      "mode": "focus",
+      "durationMinutes": 25,
+      "timestamp": 1790831175121
+    }
+  ],
+  "stats": {
+    "totalDoubtsSolved": 1,
+    "totalPracticeTests": 1,
+    "totalFocusMinutes": 25
+  }
+}
